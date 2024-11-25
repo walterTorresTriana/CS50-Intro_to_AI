@@ -4,8 +4,6 @@ X = "X"
 O = "O"
 EMPTY = None
 
-terminal_status = False
-
 def player(board):
     """
     Returns player who has the next turn on a board.
@@ -15,19 +13,20 @@ def player(board):
         return False
     
     # Count number of occurrences for different possible values
-    x_count = o_count = empty_count = 0  
+    x_counts = o_counts = empty_counts = 0  
     for row in board:
         for cell in row:
             if cell == X:
-                x_count += 1
+                x_counts += 1
             elif cell == O:
-                o_count +=1
+                o_counts +=1
             elif cell == EMPTY:
-                empty_count += 1
+                empty_counts += 1
     
-    if empty_count == 0:
+    # Return next turn based on counted elements logic
+    if empty_counts == 0:
         return False
-    elif x_count == o_count:
+    elif x_counts == o_counts:
         return X
     else:
         return O
