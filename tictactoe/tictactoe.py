@@ -9,20 +9,20 @@ O = "O"
 EMPTY = None
 
 
-def initial_state():
+def initial_state(): # S0
     """
     Returns starting state of the board.
     """
-    return [[EMPTY, EMPTY, EMPTY],
-            [EMPTY, EMPTY, EMPTY],
-            [EMPTY, EMPTY, EMPTY]]
+    return [[EMPTY, X, EMPTY],
+            [X, EMPTY, EMPTY],
+            [EMPTY, O, EMPTY]]
 
 
 def player(board):
     """
     Returns player who has the next turn on a board.
     """
-    raise NotImplementedError
+    
 
 
 def actions(board):
@@ -50,7 +50,7 @@ def terminal(board):
     """
     Returns True if game is over, False otherwise.
     """
-    raise NotImplementedError
+    return False
 
 
 def utility(board):
