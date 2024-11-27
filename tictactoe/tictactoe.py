@@ -50,7 +50,16 @@ def actions(board):
     """
     Returns set of all possible actions (i, j) available on the board.
     """
-    raise NotImplementedError
+    # Initialize empty set
+    possible_moves = set()
+
+    # Iterate through the board to get empty spaces
+    for row_index, row in enumerate(board):
+        for cell_index, cell in enumerate(row):
+            if cell == EMPTY:
+                possible_moves.add((row_index, cell_index))
+    
+    return possible_moves
 
 
 def result(board, action):
