@@ -15,7 +15,7 @@ def result(board, action):
         raise ValueError("Invalid action.")
     
     # Verify game is not over yet.
-    if not terminal(board):
+    if terminal(board):
         raise ValueError("Invalid action, the game is over.")
     
     # Create copy of the board
@@ -30,6 +30,6 @@ def result(board, action):
 # Temporary used while coding results function
 instance_of_board = initial_state()
 print(actions(instance_of_board))
-print(result(board=instance_of_board, action=actions(instance_of_board)))
+print(result(board=instance_of_board, action=next(iter(actions(instance_of_board)))))
 
 

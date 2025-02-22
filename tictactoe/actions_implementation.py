@@ -18,4 +18,4 @@ def actions(board):
     return possible_moves
 
 instance_of_board = initial_state()
-print(actions(board=instance_of_board))
+print(next(iter(actions(board=instance_of_board))))
